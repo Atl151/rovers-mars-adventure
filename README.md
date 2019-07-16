@@ -16,11 +16,11 @@ node src/app.js
 ```
 
 ## Build with
-* [Chalk] (https://www.npmjs.com/package/chalk)
-* [ReadLineSync] (https://www.npmjs.com/package/readline-sync)
+* [Chalk](https://www.npmjs.com/package/chalk)
+* [ReadLineSync](https://www.npmjs.com/package/readline-sync)
 
 ## Author
-*Daniel Garcia
+* Daniel Garcia
 
 ## Acknowledgments
-*Ironhack
+* Ironhack
