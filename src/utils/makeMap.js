@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const getRandomCoordinates = require('./getRandomCoordinates');
 
 const makeMap = function() {
-    let map = [
+    let graph = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -13,16 +13,20 @@ const makeMap = function() {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ]
+    ];
+    hassles = [];
 
     for(let i = 0; i < 5; i++){
-        hassle = getRandomCoordinates();
-        map[hassle.y][hassle.x] = 'H';
-        map[this.position.y][this.position.x] = 'R';
-        map[this.goal.y][this.goal.x] = 'G';
+        hassles.push(getRandomCoordinates());
+        graph[hassles[i].y][hassles[i].x] = 'H';
+        graph[this.position.y][this.position.x] = 'R';
+        graph[this.goal.y][this.goal.x] = 'G';
     }
 
-    return map;
+    return {
+        graph, 
+        hassles
+    };
 }
 
 const mapSymbolization = `${chalk.yellow.inverse(' 0 ')} Free space \n${chalk.green.inverse(' R ')} Rover\n${chalk.red.inverse(' H ')} Hassle \n${chalk.magenta.inverse(' G ')} Goal`;

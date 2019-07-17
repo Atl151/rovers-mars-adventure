@@ -24,8 +24,8 @@ const start = () => {
 
     //Show map and coordinates
     console.log(chalk.yellow.inverse('\n Rover needs to go from '), roverPosition, chalk.yellow.inverse(' to '), goalPosition, '\n');
-    console.table(rover.map);
-    console.log(mapSymbolization);
+    console.table(rover.map.graph);
+    console.log(rover.map.mapSymbolization);
 
     //Get user input
     let orders = readLineSync.question('\n\n What should Rover do? \n'); 

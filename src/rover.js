@@ -12,7 +12,7 @@ class Rover {
         }];
         this.cardinalDirections = ['N', 'E', 'S', 'W'];
         this.map = makeMap.call(this);
-        this.mapSymbolization = mapSymbolization;
+        this.map.mapSymbolization = mapSymbolization;
     }
 
     move(orders) {
@@ -30,6 +30,8 @@ class Rover {
                     break;
             }
         }
+        
+        // for(let i = 0; i < this.)
 
         if(this.position.x === this.goal.x && this.position.y === this.goal.y){
             this.result = chalk.green.inverse(' Successs! ')+chalk.green(' Rover has reached its goal. ');
