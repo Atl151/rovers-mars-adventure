@@ -31,13 +31,7 @@ class Rover {
             }
         }
         
-        // for(let i = 0; i < this.)
-
-        if(this.position.x === this.goal.x && this.position.y === this.goal.y){
-            this.result = chalk.green.inverse(' Successs! ')+chalk.green(' Rover has reached its goal. ');
-        } else {
-            this.result = chalk.red.inverse(' Failure. ')+chalk.red(' Rover is now lost in Mars ')
-        }
+        this.checkForSuccess.call(this);
     }
 
     goForward() {
@@ -83,6 +77,23 @@ class Rover {
         } else {
             this.direction = this.cardinalDirections[cardinalPoint+1]
         }
+    }
+
+    checkForSuccess() {
+        for(let i = 0; i < this.map.hassles.length; i++){
+            for(let j = 0; j < this.travelLog.length; j++){
+                if(this.map.hassles[i].x === this.travelLog[j].x && this.map.hassles[i].x === this.travelLog[j].x) 
+                    return this.result = chalk.red.inverse(' Failure. ')+chalk.red(' Rover crashed with an object. '); 
+            }
+        }
+
+        if(this.position.x === this.goal.x && this.position.y === this.goal.y){
+            this.result = chalk.green.inverse(' Successs! ')+chalk.green(' Rover has reached its goal. ');
+        } else {
+            this.result = chalk.red.inverse(' Failure. ')+chalk.red(' Rover is now lost in Mars ');
+        }
+
+        
     }
 }
 

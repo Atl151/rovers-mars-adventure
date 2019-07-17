@@ -32,7 +32,7 @@ const start = () => {
     rover.move(orders);
     console.log('\n\n'+rover.result);
 
-    console.log(chalk.green.inverse('\nRover\' journey'));
+    console.log(chalk.yellow.inverse('\n Rover\'s journey '));
     console.log(rover.travelLog);
 }
 
