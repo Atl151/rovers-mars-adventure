@@ -1,7 +1,6 @@
 const chalk = require('chalk');
 const readLineSync = require('readline-sync');
 const Rover = require('./rover');
-const { mapSymbolization } = require('./utils/makeMap');
 const getRandomCoordinates = require('./utils/getRandomCoordinates');
 
 const start = () => {
