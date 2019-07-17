@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const {makeMap, mapSymbolization} = require('./utils/makeMap');
 
 class Rover {
     constructor({ direction, position, goal }){
@@ -10,6 +11,8 @@ class Rover {
             y: position.y
         }];
         this.cardinalDirections = ['N', 'E', 'S', 'W'];
+        this.map = makeMap.call(this);
+        this.mapSymbolization = mapSymbolization;
     }
 
     move(orders) {
