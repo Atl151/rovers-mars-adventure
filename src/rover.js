@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const {makeMap, mapSymbolization} = require('./utils/makeMap');
+const { makeMap, mapSymbolization } = require('./utils/makeMap');
 
 class Rover {
     constructor({ direction, position, goal }){

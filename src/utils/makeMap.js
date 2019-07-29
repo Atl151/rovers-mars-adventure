@@ -14,7 +14,7 @@ const makeMap = function() {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     ];
-    hassles = [];
+    let hassles = [];
 
     for(let i = 0; i < 5; i++){
         hassles.push(getRandomCoordinates());
